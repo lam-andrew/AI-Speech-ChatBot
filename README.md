@@ -8,8 +8,16 @@
 
 ### Steps for Project setup
 - Created file structure:  
-
-- Ran `npm init -f`
+    .
+    ├── index.js
+    ├── public
+    │   ├── css
+    │   │   └── style.css
+    │   └── js
+    │       └── script.js
+    └── views
+        └── index.html  
+- Run `npm init -f`
     - `-f` accepts the fault settings. `package.json` file is generated with basic app info
 - Run `npm install express socket.io apiai --save`
     - w/ the `--save` flag, package.json will automatically be updated with installed dependencies
