@@ -8,14 +8,14 @@
 
 ### Steps for Project setup
 - Created file structure:  
-    .
-    ├── index.js
-    ├── public
-    │   ├── css
-    │   │   └── style.css
-    │   └── js
-    │       └── script.js
-    └── views
+    .  
+    ├── index.js  
+    ├── public  
+    │   ├── css  
+    │   │   └── style.css  
+    │   └── js  
+    │       └── script.js  
+    └── views  
         └── index.html  
 - Run `npm init -f`
     - `-f` accepts the fault settings. `package.json` file is generated with basic app info
