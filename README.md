@@ -7,16 +7,16 @@
 3. API.AI will return an AI response using the `SpeechSynthesis` interface to generate a synthetic voice
 
 ### Steps for Project setup
-- Created file structure:  
-    .  
-    ├── index.js  
+- Create file structure:  
+    ```.
+    ├-- index.js  
     ├── public  
     │   ├── css  
     │   │   └── style.css  
     │   └── js  
     │       └── script.js  
     └── views  
-        └── index.html  
+        └── index.html
 - Run `npm init -f`
     - `-f` accepts the fault settings. `package.json` file is generated with basic app info
 - Run `npm install express socket.io apiai --save`
