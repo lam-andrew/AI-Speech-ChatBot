@@ -7,10 +7,22 @@ const APIAI_SESSION_ID = process.env.APIAI_SESSION_ID;
 const express = require('express');
 const app = express();
 
+const path = require('path');
+
+app.get('/public/css/style.css', function(req, res) {
+  res.header("Content-Type", "text/css");
+  res.sendFile(__dirname + '/public/css/style.css');
+});
+
+app.get('/public/js/script.js', function(req, res) {
+  res.header("Content-Type", "application/javascript");
+  res.sendFile(path.join(__dirname, 'public', 'js', 'script.js'));
+});
+
 app.use(express.static(__dirname + '/views')); // html
 app.use(express.static(__dirname + '/public')); // js, css, images
 
-const server = app.listen(process.env.PORT || 5000, () => {
+const server = app.listen(process.env.PORT || 8000, () => {
   console.log('Express server listening on port %d in %s mode', server.address().port, app.settings.env);
 });
 
@@ -23,7 +35,7 @@ const apiai = require('apiai')(APIAI_TOKEN);
 
 // Web UI
 app.get('/', (req, res) => {
-  res.sendFile('index.html');
+  res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
 io.on('connection', function(socket) {
