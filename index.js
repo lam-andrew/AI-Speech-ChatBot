@@ -1,5 +1,3 @@
-'use strict';
-
 require('dotenv').config()
 const APIAI_TOKEN = process.env.APIAI_TOKEN;
 const APIAI_SESSION_ID = process.env.APIAI_SESSION_ID;
@@ -14,9 +12,17 @@ app.get('/public/css/style.css', function(req, res) {
   res.sendFile(__dirname + '/public/css/style.css');
 });
 
-app.get('/public/js/script.js', function(req, res) {
-  res.header("Content-Type", "application/javascript");
-  res.sendFile(path.join(__dirname, 'public', 'js', 'script.js'));
+// app.get('/public/js/script.js', function(req, res) {
+//   res.header("Content-Type", "application/javascript");
+//   res.sendFile(path.join(__dirname, 'public', 'js', 'script.js'));
+// });
+
+app.get('/public/js/script.js', (req, res) => {
+  res.setHeader('Content-Type', 'application/javascript');
+
+  const fs = require('fs'); 
+  const jsContent = fs.readFileSync('public/js/script.js', 'utf8');
+  res.send(jsContent);
 });
 
 app.use(express.static(__dirname + '/views')); // html
