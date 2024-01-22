@@ -21,3 +21,8 @@
     - `-f` accepts the fault settings. `package.json` file is generated with basic app info
 - Run `npm install express socket.io apiai --save`
     - w/ the `--save` flag, package.json will automatically be updated with installed dependencies
+
+
+### NOTES:
+Need to run this to set your Service Account credentials as environment variables
+`export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/keyfile.json"`
